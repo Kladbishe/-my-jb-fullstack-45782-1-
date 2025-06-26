@@ -1,0 +1,18 @@
+body{
+    background-image: url(/images/temnyi-fon-97.webp);
+    text-align: center;
+    font-size: x-large;
+    color: rgb(255, 183, 29);
+}
+ul{
+    list-style-position: inside;
+    color:rgb(220, 219, 146);
+
+}
+.link{
+    color:rgb(255, 255, 255);
+}
+table{
+    margin: auto;
+    color:rgb(255, 255, 255);
+}

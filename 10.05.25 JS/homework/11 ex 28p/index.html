@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("please enter a number: ");
+        let sum_num = 0;
+        if(num !==0){
+        while(num !==0){
+            num = (num-num%10) / 10;
+            sum_num = sum_num + 1;
+        }
+        
+        document.write(`the number of digit is: ${sum_num}`);
+        }
+        else
+        document.write(`your enter 0`);
+
+
+    </script>
+</body>
+</html>

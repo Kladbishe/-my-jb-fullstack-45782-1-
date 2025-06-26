@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta http-equiv="refresh" content="30;url=index.html"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/image/artboard-10_89054.ico">
+</head>
+<body dir="rtl">
+    <h1>חנות החיות המגניבה בארץ!</h1>
+    <hr>
+    <nav>
+    <div id="menu">
+    <a href="index.html">דף הבית</a>
+    <a href="animals.html">החנות</a>
+    <a href="contact-us.html">צור קשר</a>
+
+    </div>
+    </nav>
+    <br>
+    <br>
+    <form  action="save.html" method="get">
+        <table>      
+        <h2>צור קשר </h2>
+        <tr>
+            
+             <td><label for="username"> שם פרטי:</label></td> 
+            <td><input required type="text" id="username"></td>
+           
+        </tr>
+        <tr>
+            
+            <td><label for="Family_name"> שם משפחה:</label></td>
+            <td><input required id="Family_name" type="text" minlength="2"></td>
+             
+        </tr>
+        <tr>
+            <td>מין:</td>
+            <td>
+                    <label>
+                        <input required type="radio" name="gender" value="male"> זכר
+                    </label>
+                     <label>
+                        <input required type="radio" name="gender" value="female"> נקבה
+                    </label>
+            </td>
+        </tr>
+        <tr>
+        <td><label for="city">עיר</label></td>
+        <td>   
+            <select id="city" required>
+                <option value="" selected disabled> בחר עיר </option>
+                <option>חיפה</option>
+                <option>תל אביב</option>
+                <option>באר שבע</option>
+                <option>אשקלון</option>
+                <option>עפולה</option>
+                <option>חדרה</option>
+             </select>
+        </td> 
+        </tr>
+
+    
+        <tr>
+            <td><label for="about">הודעה</label></td>
+            <td><textarea  required placeholder="הודעה"></textarea></td>
+        </tr>
+        <tr style="text-align: center;">
+            <td colspan="2"> <button type="submit">שלח</button>
+            <button type="reset">נקה</button></td>
+        </tr>
+
+        </table>
+
+    </form>
+    <p id="copyrights1">כל הזכויות שמורות &copy;</p>
+    
+    
+</body>
+</html>

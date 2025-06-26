@@ -1,0 +1,47 @@
+ @font-face {
+        font-family: play;
+        src: url("fonts/PlaywriteHU-VariableFont_wght.ttf");
+    }
+
+h1{
+    text-align: center;
+    color: darkred;
+   font-family: play;
+}
+
+
+@keyframes myAnimation{
+    form{
+        color:blue;
+        transform: scale(2):
+    }
+    to{
+        color:red;
+        transform: scale(0,5):
+
+    }
+}
+
+
+    
+}
+p{
+    text-align: center;
+    margin-bottom: 100;
+    color:yellowgreen;
+
+}
+p:hover{
+    animation: myAnimation 3s infinite;
+}
+h2{
+    text-align: center;
+}
+
+@media(max-width:600px) {
+    h2{
+
+        font-size: 48px;
+    }
+
+}

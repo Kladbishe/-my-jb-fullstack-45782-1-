@@ -1,0 +1,10 @@
+body{
+    background-color: aqua; 
+    text-align: center;
+}
+p,h2{
+    font-size: 20px; color: blue;
+}
+.center-image{
+    text-align: center;
+}

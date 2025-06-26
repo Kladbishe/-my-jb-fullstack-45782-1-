@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("please enter a number: ");
+        let dig = +prompt("please enter single-digit number");
+        sum = 0
+        if(num<0){
+            num = num * -1;
+        }
+        if(num == 0 && dig ==0){
+            sum = 1;
+        }
+        else{
+            while(num<0 || num){
+                NewNum = num%10;
+                num = (num-num%10)/10;
+                if(NewNum == dig){
+                 sum = sum + 1;
+            }
+            
+        }
+        }
+    document.write(`number: ${dig} appears in your number ${sum}`)
+    </script>
+</body>
+</html>

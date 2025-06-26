@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Enter a number: ");
+        let sum = 0;
+        let count = 0;
+        while(num !=0 ){
+            sum = sum + num;
+            count = count + 1;
+            num = +prompt("Enter a number: ");
+        }
+        if(count > 0)
+        document.write("arithmetic mean: " + (sum/count));
+        else
+        document.write("No numbers were entered." );
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    background-color: antiquewhite;
+    font-size: medium;
+    text-align: center;
+
+}
+ul{
+    list-style-position: inside;
+    text-align: center;
+
+}
+table{
+    margin: auto;
+}

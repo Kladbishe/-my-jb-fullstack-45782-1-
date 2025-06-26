@@ -1,0 +1,28 @@
+@font-face{
+    font-family: koko;
+    src: url("PlaywriteHU-VariableFont_wght.ttf");
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+div{
+    width: 500px; 
+    justify-content:center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: koko;
+  border-radius: 20px;
+    border: 1px black solid;
+     margin: auto;
+text-align: center;
+color: white;
+  background: linear-gradient(to bottom right, blue, pink, red);
+box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+animation: rot 5s linear infinite;
+}
+

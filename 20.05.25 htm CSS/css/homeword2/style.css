@@ -1,0 +1,81 @@
+body{
+    font-style: oblique;
+    background-image: url("image/—Pngtree—simple\ cute\ cat\ paw\ background_1282055.jpg");
+    background-size: cover;  
+    color: #000000;  
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+    font: 700;
+
+}
+#menu{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+}
+#text{
+    font-size: 20px;
+    padding-top: 40px;
+    font: bold;
+}
+#homeimage{
+    width: 500px; height: auto; right:auto ;
+    display: block;
+    margin: auto;
+    padding-top: 20px;
+}
+#copyrights{
+    text-align: center;
+    font: bold;
+}
+#copyrights1{
+    text-align: center;
+    font: bold;
+    padding-top: 400px;
+}
+.animalsimage{
+ 
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    gap: 10px;
+    margin: 0 auto;   
+    width: fit-content;
+    padding-top: 60px;
+
+}
+.animalsimage img {
+       width: 150px;
+        height: 150px;
+        object-fit: cover;
+
+}
+p{
+    text-align: right;
+    font-size: larger;
+
+}
+h2{
+    font-size: 30px;
+}
+form {
+    position: fixed; right: 150px;
+   transform: scale(1.2);
+ 
+}
+form td{
+    padding-bottom: 15px;
+}
+input{
+    background-color:rgb(250, 229, 202)
+}
+textarea{
+    background-color:rgb(250, 229, 202)
+}
+button{
+     background-color:rgb(250, 229, 202)
+}
+a:hover{
+    color:blanchedalmond
+}
