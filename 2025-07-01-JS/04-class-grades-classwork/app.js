@@ -28,7 +28,7 @@ const students = [ido, lior, itay]
 // }                        //разобрать 
 let min = 100;
 let max = 0;
-let maxStudent, minStudent
+let maxStudent, minStudent;
 
 for (const student of students) {
     for (const grade of student.grades) {

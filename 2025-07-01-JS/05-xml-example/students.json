@@ -1,0 +1,8 @@
+[
+    {
+        "name": "ido",
+        "city": "tel-aviv",
+        "grades": [97,87,78],
+        "age": 25
+    }
+]
