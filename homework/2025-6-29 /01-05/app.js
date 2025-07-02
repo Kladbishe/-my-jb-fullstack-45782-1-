@@ -7,7 +7,7 @@ const customer = {
         typeCard: 'Visa',
         numberCard: '4200 4342 1232 1212',
         expirationDate: '22.03.29',
-        SVV: 142,
+        СVV: 142,
     }
 };
 document.write(`first Name: ${customer.firstName} <br>
