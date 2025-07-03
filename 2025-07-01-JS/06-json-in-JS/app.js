@@ -8,7 +8,7 @@ const studentsJson = `
         }
     ]
 `
-const student =  JSON.parse(studentsJson)
+const student = JSON.parse(studentsJson)
 
 
 console.log(studentsJson);
