@@ -4,9 +4,9 @@ const grades = [
     [60, 98, 78],
 ];
 let sum = 0;
-for ( const grade of grades){
-    for(const OneGrade of grade){
-        sum +=OneGrade
+for (const grade of grades) {
+    for (const OneGrade of grade) {
+        sum += OneGrade
     }
 };
 console.log(`Sum for grades: ${sum}`);
