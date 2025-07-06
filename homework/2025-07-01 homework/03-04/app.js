@@ -7,11 +7,11 @@ let hasDigit = false;
 let hasSpecialChar = false;
 
 
-for (const char of password) {
+for(const char of password){
     // if('01234567890'.includes(char)) hasDigit = true
-    if (number(char) !== NaN) hasDigit = true
-    if ('/$(_@$&!)^$)!*@'.includes(char)) hasSpecialChar = true
+    if(number(char) !== NaN) hasDigit = true
+    if('/$(_@$&!)^$)!*@'.includes(char)) hasSpecialChar = true
 }
-if (hasCapitalLatter && hasLowerCaseLetter && hasDigit && hasSpecialChar) {
+if(hasCapitalLatter && hasLowerCaseLetter && hasDigit && hasSpecialChar){
     console.log('great password!')
 }
