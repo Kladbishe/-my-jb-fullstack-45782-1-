@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Текст сверху, фонарик и фон</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      cursor: none; /* скрываем курсор */
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 0; /* фон - самый нижний */
+    }
+
+    .light {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1; /* фонарик – середина */
+      --x: 50%;
+      --y: 50%;
+      background: radial-gradient(circle 200px at var(--x) var(--y), rgba(255,255,255,0.2), rgba(0,0,0,0.95) 80%);
+      mix-blend-mode: screen;
+      opacity: 1;
+      transition: opacity 0.1s;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2; /* ТЕКСТ — САМЫЙ ВЕРХНИЙ */
+      padding: 100px;
+      max-width: 800px;
+      margin: auto;
+      color: rgb(0, 0, 0);
+      font-size: 20px;
+      line-height: 1.6;
+      pointer-events: none; /* чтобы не мешал движению мыши */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <div class="light"></div>
+
+  <div class="content">
+    <p>Я — текст, нахожусь поверх всего, даже поверх фонарика.</p>
+    <p>Фонарик подо мной, а фон — самый внизу.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <script>
+    const light = document.querySelector('.light');
+
+    document.addEventListener('mousemove', (e) => {
+      light.style.setProperty('--x', `${e.clientX}px`);
+      light.style.setProperty('--y', `${e.clientY}px`);
+    });
+
+    // эффект мигания
+    function flicker() {
+      const flashes = Math.floor(Math.random() * 2) + 2;
+      let count = 0;
+      function blink() {
+        if (count < flashes) {
+          light.style.opacity = '0';
+          setTimeout(() => {
+            light.style.opacity = '1';
+            count++;
+            setTimeout(blink, 100 + Math.random() * 150);
+          }, 150 + Math.random() * 100);
+        }
+      }
+      blink();
+      setTimeout(flicker, Math.random() * 3000 + 3000);
+    }
+    flicker();
+  </script>
+
+</body>
+</html>
