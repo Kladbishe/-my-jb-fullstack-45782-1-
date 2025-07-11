@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+
+        <div class="div1">
+
+            <form id="recipeForm" onsubmit="addRecipe(event)">
+                <label class="form-label" for="ingredient">Ingredient</label>
+                <input class="form-control" id="ingredient" type="text" required>
+                <br><br>
+
+                <label class="form-label" for="amount">Amount</label>
+                <input class="form-control" id="amount" type="number" required step="0.25">
+                <br><br>
+
+                <button class="btn btn-outline-primary">Add ingredient</button>
+
+            </form>
+        </div>
+
+        <div class="div2">
+            <ol class="list-group" id="list">
+                <li class="list-group-item active" aria-current="true">Recipe cake:</li>
+
+
+
+
+            </ol>
+
+        </div>
+    </div>
+</body>
+
+</html>

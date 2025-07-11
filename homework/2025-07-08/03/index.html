@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="div1">
+            <form id="add-Color" onsubmit="addColor(event)">
+                <label class="form-label" for="textColor"> Color :</label>
+                <input class="form-control" type="text" id="textColor" required>
+                <br>
+                <button class="btn btn-primary btn-sm">add color</button>
+                <br>
+
+                
+            </form>
+            <br>
+            <p id="numColor">number color:</p>
+        </div>
+        <div class="div2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Color name</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody id="list-color">
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

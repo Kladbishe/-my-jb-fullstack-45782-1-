@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+
+        <div class="div1">
+            <form  id="formGrages" onsubmit="addGrade(event)">
+
+                <label class="form-label" for="firstNameStudent">Fist name:</label>
+                <input class="form-control" type="text" id="firstNameStudent" required>
+                <br>
+
+                <label class="form-label" for="lastNameStudent">Last name:</label>
+                <input class="form-control" type="text" id="lastNameStudent" required>
+                <br>
+
+                <label class="form-label" for="gradeStudent">Grade:</label>
+                <input class="form-control" type="number" min="0" max="100" id="gradeStudent" required>
+                <br>
+                <button class="btn btn-primary btn-sm">Add grade</button>
+            </form>
+            <br>
+            <p  id="averageGrade">average grade for the whole class:</p>
+
+        </div>
+
+
+        <div class="div2">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Grades</th>
+                    </tr>
+                </thead>
+                <tbody id="student-list">
+                    
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
