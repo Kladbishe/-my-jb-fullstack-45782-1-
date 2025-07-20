@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="parent">
+    <div class="div1">
+        
+        <form id="productForm" onsubmit="addProduct(event)"> Add Product
+            <label for="nameProduct">Name product</label>
+            <input id="nameProduct" type="text" required>
+            <br><br>
+            <label for="priceProduct">Price product</label>
+            <input id="priceProduct" type="number" required>
+            <br><br>
+            <label for="categoryProduct">Category product</label>
+            <select name="" id="categoryProduct" required>
+                <option value="drink">drink</option>
+                <option value="meat">meat</option>
+                <option value="dairy">dairy</option>
+                <option value="snacks">snacks</option>
+                <option value="basic">basic</option>
+            </select>
+            <br><br>
+            <label for="picURL">link to picture</label>
+            <input type="url" id="picURL" required>
+
+        </form>
+
+    </div>
+
+    <div class="div2">
+
+    </div>
+</div>
+    
+</body>
+</html>
