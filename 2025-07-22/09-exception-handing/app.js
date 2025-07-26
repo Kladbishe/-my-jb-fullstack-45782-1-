@@ -28,5 +28,5 @@ try {
     work()
     console.log('after work')
 } catch (err) {
-    console.log('exception in work function invokation')
+    console.log('exception in work function invoсation')
 }
