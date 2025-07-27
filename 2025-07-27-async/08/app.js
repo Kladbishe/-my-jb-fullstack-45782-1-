@@ -1,42 +1,42 @@
 (() => {
-    const getAsyncRandomNumber = (max, successCallback, errorCallback) => {
-        setTimeout(() => {
-            const random = Math.random() * max
-            if (random > max) errorCallback('internal server')
-            else successCallback(random)
-        }, 100)
+    // const getAsyncRandomNumber = (max, successCallback, errorCallback) => {
+    //     setTimeout(() => {
+    //         const random = Math.random() * max
+    //         if (random > max) errorCallback('internal server')
+    //         else successCallback(random)
+    //     }, 100)
 
-    }
-
-
+    // }
 
 
 
-    getAsyncRandomNumber(100, nextMax => {
-        getAsyncRandomNumber(nextMax, nextMax => {
-            getAsyncRandomNumber(nextMax, nextMax => {
-                getAsyncRandomNumber(nextMax, nextMax => {
-                    getAsyncRandomNumber(nextMax, nextMax => {
-                        getAsyncRandomNumber(nextMax, nextMax => {
-                            getAsyncRandomNumber(nextMax, nextMax => {
-                                getAsyncRandomNumber(nextMax, nextMax => {
-                                    getAsyncRandomNumber(nextMax, nextMax => {
-                                        getAsyncRandomNumber(nextMax, nextMax => {
-                                            getAsyncRandomNumber(nextMax, nextMax => {
-                                                getAsyncRandomNumber(nextMax, nextMax => {
-                                                    console.log(nextMax)
-                                                })
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
+
+
+    // getAsyncRandomNumber(100, nextMax => {
+    //     getAsyncRandomNumber(nextMax, nextMax => {
+    //         getAsyncRandomNumber(nextMax, nextMax => {
+    //             getAsyncRandomNumber(nextMax, nextMax => {
+    //                 getAsyncRandomNumber(nextMax, nextMax => {
+    //                     getAsyncRandomNumber(nextMax, nextMax => {
+    //                         getAsyncRandomNumber(nextMax, nextMax => {
+    //                             getAsyncRandomNumber(nextMax, nextMax => {
+    //                                 getAsyncRandomNumber(nextMax, nextMax => {
+    //                                     getAsyncRandomNumber(nextMax, nextMax => {
+    //                                         getAsyncRandomNumber(nextMax, nextMax => {
+    //                                             getAsyncRandomNumber(nextMax, nextMax => {
+    //                                                 console.log(nextMax)
+    //                                             })
+    //                                         })
+    //                                     })
+    //                                 })
+    //                             })
+    //                         })
+    //                     })
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
 
 
 
@@ -53,11 +53,40 @@
 
     }
 
-    const p = getAsyncRandomNumberPromise(100)
-    p.then(random => { console.log(random) }
-
-    ).catch(err => { console.log(`there was an error: ${err}`) }
-    ).finally(() => { console.log('in finally') })
+    const p = getAsyncRandomNumberPromise(1000000)
+    p.then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    }).then(random => {
+        console.log(random)
+        return getAsyncRandomNumberPromise(random)
+    })
+        .catch(err => { console.log(`there was an error: ${err}`) }
+        ).finally(() => { console.log('in finally') })
     console.log(p)
 
 
