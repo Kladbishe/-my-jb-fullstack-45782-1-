@@ -2111,15 +2111,15 @@ const users = {
 //     const fullName = users.users.map(user => `${user.firstName} ${user.lastName}`)
 // console.log(fullName)
 console.log('FULL NAME')
-console.log(users.users.map(user => `${user.firstName} ${user.lastName}`))
+console.log(users.users.map(({ firstName, lastName }) => `${firstName} ${lastName}`))
 
 console.log('List of all states')
-const allStates = new Set(users.users.map(user => user.address.state))
+const allStates = new Set(users.users.map(({ address: { state } }) => state))
 console.log(allStates)
 
 console.log('List of all eye colors')
-const listOfAllEyeColors = new Set(users.users.map(user => user.eyeColor))
-console.log(listOfAllEyeColors)
+// const listOfAllEyeColors = new Set(users.users.map(user => user.eyeColor))
+// console.log(listOfAllEyeColors)
 const eyeColor = users.users.reduce((cumulative, user) => {
     const color = user.eyeColor;
     cumulative[color] = (cumulative[color] || 0) + 1;
@@ -2127,14 +2127,46 @@ const eyeColor = users.users.reduce((cumulative, user) => {
 }, {})
 console.log(eyeColor)
 console.log("Comparison of average weight between the Northern and Southern Hemispheres")
-const userNorth = users.users.filter(user => user.address.coordinates.lat > 0).reduce((cumulative, user) => {
-    return cumulative += user.weight
-}, 0) / users.users.length
-const userSouth = users.users.filter(user => user.address.coordinates.lat < 0).reduce((cumulative, user) => {
-    return cumulative += user.weight
-}, 0) / users.users.length
+
+const userNorthArray = users.users.filter(user => user.address.coordinates.lat > 0);
+const userSouthArray = users.users.filter(user => user.address.coordinates.lat < 0);
+
+const userNorth = userNorthArray.reduce((cumulative, user) => {
+    return cumulative + user.weight;
+}, 0) / userNorthArray.length;
+
+const userSouth = userSouthArray.reduce((cumulative, user) => {
+    return cumulative + user.weight;
+}, 0) / userSouthArray.length;
 
 
 console.log("Average weight in Northern Hemisphere:", userNorth.toFixed(2));
 console.log("Average weight in Southern Hemisphere:", userSouth.toFixed(2));
 
+
+
+// // // // // // /// // /// //// /// /// /// //// /// ///
+console.log(
+    users.users.reduce((cumulative, { weight, address: { coordinates: { lat } } }) => {
+        const hemisphere = cumulative.find(({ id }) => id === (lat >= 0 ? "north" : 'south'))
+        hemisphere.sum += weight
+        hemisphere.count++
+        return cumulative
+    }, [
+        {
+            id: "north",
+            sum: 0,
+            count: 0
+        },
+        {
+            id: "south",
+            sum: 0,
+            count: 0
+        }
+    ]).map(({id,sum,count})=> ({
+        id,
+        average: sum/count
+    }))
+)
+
+// // // // // // /// // /// //// /// /// /// //// /// ///
