@@ -1,6 +1,9 @@
 'use strict';
-document.body.style.backgroundColor = "green";
-setTimeout(()=>{
-alert("Done");
-},1000)
+document.getElementById('button').addEventListener('click', () => {
+    document.body.style.backgroundColor = "green";
+    setTimeout(() => {
+        alert("Done");
+    }, 1000)
+})
+
 
