@@ -17,10 +17,10 @@
 
     const getData = url => fetch(url).then(response => response.json())
 
-    const fetchData = async () => {
-        const users = await getData('https://jsonplaceholder.typicode.com/users');
-        return users
-    }
+    //short version
+
+    const fetchData = async () => getData('https://jsonplaceholder.typicode.com/users');
+    
 
     const generateHTML = ({ name, username, email, phone, address: { street, zipcode, city }, company: { name: companyName } }) => {
         return `
