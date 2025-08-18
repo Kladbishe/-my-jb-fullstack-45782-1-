@@ -1,0 +1,10 @@
+import Speaker from "./speaker.js";
+const speaker1 = new Speaker("black", 100);
+speaker1.playSound();
+speaker1.turnOn();
+speaker1.showDetails();
+const speaker3 = new Speaker("white", 200);
+speaker3.playSound();
+speaker3.turnOn();
+speaker3.showDetails();
+speaker1.turnOff();
