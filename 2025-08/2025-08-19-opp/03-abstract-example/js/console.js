@@ -1,6 +1,6 @@
 import Logger from "./logger.js";
 export default class ConsoleLogger extends Logger {
-    log(message) {
+    message(message) {
         console.log(message);
     }
 }

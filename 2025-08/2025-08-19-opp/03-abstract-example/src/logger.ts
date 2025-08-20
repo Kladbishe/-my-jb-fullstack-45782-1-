@@ -1,3 +1,3 @@
 export default abstract class Logger{
-    abstract log(message:string): void
+    abstract message(message:string): void
 }

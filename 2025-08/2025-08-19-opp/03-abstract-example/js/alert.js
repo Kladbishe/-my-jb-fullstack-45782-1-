@@ -1,6 +1,6 @@
 import Logger from "./logger";
 export default class AlertLogger extends Logger {
-    log(message) {
+    message(message) {
         alert(message);
     }
 }
