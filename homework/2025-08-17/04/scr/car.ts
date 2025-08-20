@@ -4,6 +4,7 @@ export default class Car{
     model: string;
     color: string;
     engineCapacity: number
+    static count: number = 0
 
     constructor( carNumber: number, manufacturer: string, model: string, color: string, engineCapacity: number){
         this.carNumber = carNumber
@@ -11,6 +12,7 @@ export default class Car{
         this.model = model
         this.color = color
         this.engineCapacity = engineCapacity
+        Car.count++
     }
 
     displayCarDetails(){
