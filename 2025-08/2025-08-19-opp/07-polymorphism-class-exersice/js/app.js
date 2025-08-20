@@ -5,11 +5,11 @@ const shape = +prompt('enter 1 - square, 2- rect, 3-circle');
 function getShape(shape) {
     switch (shape) {
         case 1:
-            return new Square(10);
+            return new Square();
         case 2:
-            return new Rectangle(10, 10);
+            return new Rectangle();
         case 3:
-            return new Circle(10);
+            return new Circle();
     }
 }
-console.log(` area of shape is: ${getShape(shape).calcArea()}`);
+console.log(` area of shape is: ${getShape(shape).calcArea(10)}`);
