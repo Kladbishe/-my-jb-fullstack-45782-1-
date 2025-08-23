@@ -1,0 +1,11 @@
+import Animal from "./animal.js";
+export enum Canine {
+  BorderColie = "Border Colie",
+  Labrador = "Labrador",
+  ShiTzu = " Shi Tzu",
+}
+export default class Dog extends Animal {
+  constructor(weight: number, public canine: Canine) {
+    super(weight);
+  }
+}
