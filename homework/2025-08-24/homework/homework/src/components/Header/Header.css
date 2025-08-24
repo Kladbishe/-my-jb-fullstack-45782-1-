@@ -1,0 +1,7 @@
+.Header {
+  grid-area: header;
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+  color: blue;
+}

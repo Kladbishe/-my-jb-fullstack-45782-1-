@@ -1,0 +1,6 @@
+.Skills {
+  grid-area: skills;
+}
+.Skills ul {
+  list-style-type: "-> ";
+}

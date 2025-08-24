@@ -1,0 +1,11 @@
+.Details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Details img {
+
+  max-width: 300px;
+  justify-content: center;
+}
