@@ -26,12 +26,13 @@ export default function Feed(){
                      {username} 
                     <br /> 
                     <b>{title}</b>
-                    <br />
+                    <br /><br />
                     {body}
-                    <br />
+                    <br /><br />
                     <img src={imageUrl} alt="images" />
                     <br />
                     {(new Date(createdAt)).toLocaleTimeString()}
+                    <br /><br />
                    
                      </li> )}
             </ul>
