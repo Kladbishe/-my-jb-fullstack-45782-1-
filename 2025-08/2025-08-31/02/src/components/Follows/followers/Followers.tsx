@@ -13,11 +13,9 @@ export default function Followers() {
 
   return (
     <div className="Followers">
-      <ul>
         {followers.map((follow) => (
           <Follow key={follow.id} user={follow} />
         ))}
-      </ul>
     </div>
   );
 }

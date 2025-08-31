@@ -15,7 +15,7 @@ export default function Feed() {
   }
   return (
     <div className="Feed">
-      <ul>
+
         {feed.map((post) => (
           <Post
             key={post.id}
@@ -24,7 +24,6 @@ export default function Feed() {
             removePost={removeMe}
           />
         ))}
-      </ul>
     </div>
   );
 }

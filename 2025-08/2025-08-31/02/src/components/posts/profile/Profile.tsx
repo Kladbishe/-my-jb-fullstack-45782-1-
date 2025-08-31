@@ -3,6 +3,7 @@ import "./Profile.css";
 import profileService from "../../../services/profile";
 import type PostModel from "../../../models/post";
 import Post from "../post/Post";
+import NewPost from "../new/NewPost";
 
 export default function Profile() {
   console.log("rendering...");
@@ -22,10 +23,13 @@ export default function Profile() {
   function removePost(id: string): void {
     setProfile(profile.filter((post) => post.id !== id));
   }
+  function renderNewPost(post: PostModel):void{
+    setProfile([post, ...profile])
+  }
 
   return (
     <div className="Profile">
-      <ul>
+      <NewPost renderNewPost={renderNewPost}/>
         {profile.map((post) => (
           <Post
             key={post.id}
@@ -34,7 +38,6 @@ export default function Profile() {
             isEditAllowed={true}
           />
         ))}
-      </ul>
     </div>
   );
 }
