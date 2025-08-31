@@ -1,30 +1,23 @@
 import { useEffect, useState } from 'react'
+import type PostModel from '../../../models/post'
 import './Feed.css'
-import type Post from '../../../models/post'
 import feedService from '../../../services/feed'
+import Post from '../post/Post'
 
+export default function Feed() {
 
-export default function Feed(){
-    const [feed, setFeed] = useState<Post[]>([])
-    useEffect(()=>{
-             feedService.getFeed().then(setFeed).catch(alert)
-    },[])
-    return(
+    const [feed, setFeed] = useState<PostModel[]>([])
+
+    useEffect(() => {
+        feedService.getFeed()
+            .then(setFeed)
+            .catch(alert)
+    }, [])
+
+    return (
         <div className='Feed'>
             <ul>
-                {feed.map(({user:{username}, id, title,body,createdAt,imageUrl})=> <li key={id}>
-                     {username} 
-                    <br /> 
-                    <b>{title}</b>
-                    <br /><br />
-                    {body}
-                    <br /><br />
-                    <img src={imageUrl} alt="images" />
-                    <br />
-                    {(new Date(createdAt)).toLocaleTimeString()}
-                    <br /><br />
-                   
-                     </li> )}
+                {feed.map(post => <Post key={post.id} post={post}  />)}
             </ul>
         </div>
     )

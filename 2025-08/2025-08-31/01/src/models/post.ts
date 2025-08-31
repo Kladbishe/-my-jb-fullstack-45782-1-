@@ -1,7 +1,7 @@
 import type PostComments from "./post-comments";
 import type User from "./user";
 
-export default interface Post {
+export default interface PostModel {
   id: string;
   userId: string;
   title: string;

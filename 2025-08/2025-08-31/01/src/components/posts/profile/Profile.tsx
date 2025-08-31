@@ -1,30 +1,34 @@
-import { useEffect, useState } from "react";
-import "./Profile.css";
-import profileService from "../../../services/profile";
-import type Post from "../../../models/post";
+import { useEffect, useState } from 'react'
+import './Profile.css'
+import profileService from '../../../services/profile'
+import type PostModel from '../../../models/post'
+import Post from '../post/Post'
 
 export default function Profile() {
-  
-  const [profile, setProfile] = useState<Post[]>([])
-  useEffect(() => {
-    (async()=>{
-      try{
-          const profile = await profileService.getProFile()
-          setProfile(profile)
-      } catch(e){
-        alert(e)
-      }
-         
-    })()
-    return()=>{
 
+    console.log('rendering...')
+
+    const [profile, setProfile] = useState<PostModel[]>([])
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const profileFromServer = await profileService.getProfile()
+                setProfile(profileFromServer)
+            } catch (e) {
+                alert(e)
+            }
+        })()
+    }, [])
+    function removePost(id:string): void{
+      setProfile(profile.filter(post => post.id !== id))
     }
-}, []);
 
-  return(        
-  <div className="Profile">
-          <ul>
-            {profile.map(({id, title,createdAt, user:{name}, comments })=> <li key={id}>{title} on {(new Date(createdAt)).toLocaleDateString()} by {name} ({comments.length}) </li>)}
-          </ul>
-  </div>)
-}
+    return (
+        <div className='Profile'>
+            <ul>
+                {profile.map(post => <Post key={post.id} post={post} removePost={removePost}/>)}
+            </ul>
+        </div>
+    )
+} 

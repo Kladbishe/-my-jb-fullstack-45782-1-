@@ -1,29 +1,23 @@
-import { useEffect, useState } from "react"
-import "./Followers.css"
-import type User from "../../../models/user"
-import followersService from "../../../services/follows/followers"
+import { useEffect, useState } from 'react'
+import './Followers.css'
+import type User from '../../../models/user'
+import followersService from '../../../services/follows/followers'
+import Follow from '../Follow/Follow'
 
-export default function Followers(){
-
+export default function Followers() {
     const [followers, setFollowers] = useState<User[]>([])
 
-    useEffect(()=>{
+    useEffect(() => {
+        followersService.getFollowers()
+            .then(setFollowers)
+            .catch(alert)
+    }, [])
 
-        followersService.getFollowers().then(setFollowers).catch(alert)
-    },[])
-
-
-    return(
-        <div
-        className="Followers">
+    return (
+        <div className='Followers'>
             <ul>
-                {followers.map(({name, username, id})=>
-                <li key={id}>
-                    <b>{name}</b> - {username} 
-                </li>
-                )}
+                {followers.map(follow => <Follow key={follow.id} user={follow} />)}
             </ul>
-            
         </div>
     )
 }
