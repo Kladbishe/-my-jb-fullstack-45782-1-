@@ -9,17 +9,7 @@ export default function Followers(){
 
     useEffect(()=>{
 
-        (async()=>{
-            try{
-                const followers = await followersService.getFollowers()
-                setFollowers(followers)
-            } catch(e){
-                alert(e)
-            }
-        })()
-        // return()=>{
-
-        // }
+        followersService.getFollowers().then(setFollowers).catch(alert)
     },[])
 
 
