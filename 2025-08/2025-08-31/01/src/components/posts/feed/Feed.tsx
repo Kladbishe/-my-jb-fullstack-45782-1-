@@ -7,17 +7,7 @@ import feedService from '../../../services/feed'
 export default function Feed(){
     const [feed, setFeed] = useState<Post[]>([])
     useEffect(()=>{
-             (async()=>{
-                try{
-                    const feed = await feedService.getFeed()
-                    setFeed(feed)
-                } catch(e){
-                    alert(e)
-                }
-             })()
-        return()=>{
-
-        }
+             feedService.getFeed().then(setFeed).catch(alert)
     },[])
     return(
         <div className='Feed'>

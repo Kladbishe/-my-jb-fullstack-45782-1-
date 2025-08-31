@@ -1,7 +1,7 @@
 
 
-import Followers from '../followers/Followers'
-import Following from '../following/Following'
+import Followers from '../../follows/followers/Followers'
+import Following from '../../follows/following/Following'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import Main from '../Main/Main'
