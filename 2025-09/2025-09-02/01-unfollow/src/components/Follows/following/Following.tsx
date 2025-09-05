@@ -13,11 +13,20 @@ export default function Following() {
             .then(setFollowing)
             .catch(alert)
     }, [])
+    function unfollow(id: string){
+        setFollowing(following.filter(follow => follow.id !== id))
+        
+    }
 
+    
     return (
         <div className='Following'>
         
-                {following.map(follow => <Follow key={follow.id} user={follow} />)}
+                {following.map(follow => <Follow
+                 key={follow.id} user={follow}
+                 isFollowing ={true}
+                 unfollow ={unfollow}
+                 />)}
           
         </div>
     )
