@@ -1,0 +1,9 @@
+.Post{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed lawngreen;
+}
+.Post img{
+    height: 50px;
+    width: auto;
+}
