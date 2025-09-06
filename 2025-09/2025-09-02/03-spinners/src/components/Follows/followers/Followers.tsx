@@ -3,6 +3,7 @@ import "./Followers.css";
 import type User from "../../../models/user";
 import followersService from "../../../services/follows/followers";
 import Follow from "../Follow/Follow";
+import Spinner from "../../common/spinner/Spinner";
 
 export default function Followers() {
   const [followers, setFollowers] = useState<User[]>([]);
@@ -13,9 +14,12 @@ export default function Followers() {
 
   return (
     <div className="Followers">
-        {followers.map((follow) => (
+      {followers.length > 0 && <> 
+       {followers.map((follow) => (
           <Follow key={follow.id} user={follow} />
         ))}
+      </>}
+       {followers.length ===0 && <Spinner /> }
     </div>
   );
 }

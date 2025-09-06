@@ -5,6 +5,7 @@ import type PostModel from "../../../models/post";
 import Post from "../post/Post";
 import NewPost from "../new/NewPost";
 import type PostComment from "../../../models/post-comment";
+import Spinner from "../../common/spinner/Spinner";
 
 export default function Profile() {
   console.log("rendering...");
@@ -28,22 +29,28 @@ export default function Profile() {
     setProfile([post, ...profile])
   }
   function newComment(comment: PostComment){
+    const newProfile = [...profile]
     const post =profile.find(post => post.id === comment.postId)
     post?.comments.push(comment)
-    setProfile([...profile])
+    setProfile(newProfile)
   }
+
+ 
+
   return (
     <div className="Profile">
+      {profile.length> 0 && <>
       <NewPost renderNewPost={renderNewPost}/>
-        {profile.map((post) => (
+        {profile.map(post => 
           <Post
             key={post.id}
             post={post}
             removePost={removePost}
             isEditAllowed={true}
             newComment={newComment}
-          />
-        ))}
+          />)}
+      </>}
+      {profile.length === 0 && <Spinner />}
     </div>
   );
 }
