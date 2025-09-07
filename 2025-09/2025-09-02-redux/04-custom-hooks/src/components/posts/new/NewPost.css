@@ -1,0 +1,9 @@
+.NewPost form{
+    display: flex;
+    flex-direction: column;
+}
+.NewPost{
+    border:1px dashed lightcoral;
+    margin: 6px;
+    padding: 5px;
+}
