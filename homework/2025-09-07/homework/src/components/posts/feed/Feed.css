@@ -1,0 +1,7 @@
+.Feed {
+  max-height: calc(100vh - 13vh); 
+  overflow-y: auto;
+  padding: 20px;
+
+
+}

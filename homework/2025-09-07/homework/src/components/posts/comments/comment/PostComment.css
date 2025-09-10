@@ -1,0 +1,6 @@
+.PostComment{
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed rgb(0, 20, 175);
+    margin: 2px;
+}

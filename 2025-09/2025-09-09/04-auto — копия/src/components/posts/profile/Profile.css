@@ -1,0 +1,5 @@
+.Profile {
+  max-height: 115vh; 
+  overflow-y: auto;
+  padding: 20px;
+}
