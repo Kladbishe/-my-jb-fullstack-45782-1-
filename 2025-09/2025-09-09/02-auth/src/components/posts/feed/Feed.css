@@ -1,0 +1,10 @@
+.Feed {
+  max-height: 134vh; 
+  overflow-y: auto;
+  padding: 20px;
+
+
+}
+.Feed .info-box{
+  background-color: blanchedalmond;
+}
