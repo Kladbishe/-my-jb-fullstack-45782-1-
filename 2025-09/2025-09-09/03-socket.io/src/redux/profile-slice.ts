@@ -35,8 +35,11 @@ export const profileSlice = createSlice({
       state.posts = state.posts.filter((p) => p.id !== action.payload);
     },
    postAged: (state) => {
-            state.posts = [state.newPost!, ...state.posts]
+    if(state.newPost){
+            state.posts = [state.newPost, ...state.posts]
             state.newPost = undefined
+    }
+            
         }
   },
 });
