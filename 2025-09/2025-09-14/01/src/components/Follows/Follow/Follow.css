@@ -1,0 +1,10 @@
+.Follow{
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed lightgreen;
+    padding: 6px;
+
+}
+.Follow img{
+    width: 60px;
+}
