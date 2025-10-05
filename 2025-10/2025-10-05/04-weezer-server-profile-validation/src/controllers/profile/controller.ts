@@ -2,13 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import Post from "../../models/Post";
 import User from "../../models/User";
 import Comment from "../../models/Comment";
+import postIncludes from "../common/post-includes";
 
-const postIncludes = {
-    include: [User, {
-        model: Comment,
-        include: [User]
-    }]
-}
+
 
 
 export async function getProfile(req: Request, res: Response, next: NextFunction) {
@@ -56,7 +52,11 @@ export async function createPost(req: Request, res: Response, next: NextFunction
 
     const userId = '1230ae30-dc4f-4752-bd84-092956f5c633'
 
+
+
     try {
+
+
         const newPost = await Post.create({ ...req.body, userId })
         await newPost.reload(postIncludes)
         res.json(newPost)
