@@ -1,0 +1,120 @@
+:root{
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #16a34a;   /* зелёный акцент для природы */
+  --shadow: 0 10px 25px rgba(0,0,0,.06);
+  --radius: 14px;
+}
+
+.Regions{
+  box-sizing: border-box;
+  width: min(1100px, 94vw);
+  margin: 24px auto;
+  padding: 24px clamp(18px, 3vw, 28px);
+  background: var(--bg);
+  border-radius: 18px;
+}
+
+/* верхняя панель (селект) */
+.Regions select{
+  width: min(560px, 100%);
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: box-shadow .2s, border-color .2s, transform .05s ease-in-out;
+  appearance: none;           /* нативную стрелку скрываем */
+  background-image: linear-gradient(180deg, #f9fafb, #fff);
+}
+
+.Regions select:focus{
+  border-color: color-mix(in oklab, var(--accent) 60%, #000 0%);
+  box-shadow: 0 0 0 4px rgba(22,163,74,.12), var(--shadow);
+}
+
+.Regions .sites-title,
+.Regions .regions-title{
+  margin: 14px 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Сетка карточек */
+.site-list{
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* Карточка места */
+.site-item{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.site-item:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0,0,0,.09);
+  border-color: #dfe3e8;
+}
+
+.site-name{
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.site-prices{
+  display: flex;
+  gap: 10px 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* бейджи цен */
+.site-prices span{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3faf5;
+  color: #14532d;
+  border: 1px solid #dcfce7;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+/* пустое состояние */
+.empty{
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* адаптив */
+@media (max-width: 540px){
+  .Regions{ padding-inline: 14px; }
+  .site-item{ min-height: 110px; }
+}

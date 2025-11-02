@@ -1,0 +1,41 @@
+.AddFurniture {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.AddFurniture form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.AddFurniture input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.AddFurniture button {
+  padding: 8px;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.AddFurniture button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+.formError {
+  color: #d93025;        /* красный цвет, как в формах Google */
+  font-size: 0.85rem;    /* немного меньше основного текста */
+  margin-top: -6px;      /* чуть ближе к полю ввода */
+  margin-bottom: 6px;
+  min-height: 1em;       /* чтобы форма не дёргалась при появлении ошибки */
+}

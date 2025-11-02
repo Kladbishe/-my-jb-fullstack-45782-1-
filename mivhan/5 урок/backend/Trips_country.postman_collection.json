@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "0ff26b89-3520-4355-aada-82c83a68b7b8",
+		"name": "Trips_country",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47996150",
+		"_collection_link": "https://lyubimov99-9644166.postman.co/workspace/Pavel-Porin's-Workspace~0942365d-3ecf-4286-81dd-312275d01d08/collection/47996150-0ff26b89-3520-4355-aada-82c83a68b7b8?action=share&source=collection_link&creator=47996150"
+	},
+	"item": [
+		{
+			"name": "all region",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/regions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "site per region",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/sites/by-site/a8e251f1-7e44-4cbe-9ef7-bec5b6b61004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sites",
+						"by-site",
+						"a8e251f1-7e44-4cbe-9ef7-bec5b6b61004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create site",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"regionId\": \"7f1c41b5-8a8d-4f2e-8b8f-3a1e6eaa1001\",\n  \"name\": \"Nahal Snir Nature Reserve\",\n  \"description\": \"A beautiful hiking trail along a flowing stream in the northern Golan area.\",\n  \"priceAdult\": 32,\n  \"priceChild\": 16\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sites/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sites",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete site",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/sites/delete/site/1d6d8fa2-8b39-4b02-815c-fe88fad498e4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sites",
+						"delete",
+						"site",
+						"1d6d8fa2-8b39-4b02-815c-fe88fad498e4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

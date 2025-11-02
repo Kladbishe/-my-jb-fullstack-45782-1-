@@ -1,0 +1,29 @@
+.Footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: #101425; /* тот же оттенок, что в List */
+  color: #98a2b3;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.3px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Выделим URL сервера */
+.Footer span {
+  color: #5b8cff;
+  font-weight: 500;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .Footer {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+}

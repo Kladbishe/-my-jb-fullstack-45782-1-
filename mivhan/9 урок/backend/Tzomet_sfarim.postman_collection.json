@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "96b35cdc-b177-44dd-a168-2b355e8fb1e0",
+		"name": "Tzomet_sfarim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47996150",
+		"_collection_link": "https://lyubimov99-9644166.postman.co/workspace/Pavel-Porin's-Workspace~0942365d-3ecf-4286-81dd-312275d01d08/collection/47996150-96b35cdc-b177-44dd-a168-2b355e8fb1e0?action=share&source=collection_link&creator=47996150"
+	},
+	"item": [
+		{
+			"name": "get all authors",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"authorId\": \"adf9b2c1-48e3-4c0e-bb5a-f1b182df1e64\",\n  \"bookName\": \"Resurrection\",\n  \"numOfPages\": 480,\n  \"price\": 89\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"authorId\": \"adf9b2c1-48e3-4c0e-bb5a-f1b182df1e64\",\n  \"bookName\": \"Resurrection\",\n  \"numOfPages\": 480,\n  \"price\": 89\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/delete/d5a2325e-c3e9-4382-990a-09570a71112f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"delete",
+						"d5a2325e-c3e9-4382-990a-09570a71112f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searh",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"authorId\": \"adf9b2c1-48e3-4c0e-bb5a-f1b182df1e64\",\n  \"bookName\": \"Resurrection\",\n  \"numOfPages\": 480,\n  \"price\": 89\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/books/search?q=war",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "war"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
