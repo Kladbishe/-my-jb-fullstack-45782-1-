@@ -11,4 +11,5 @@ class AuthorsService {
     }
 }
 
-export default new AuthorsService();
+const authorsService = new AuthorsService()
+export default authorsService

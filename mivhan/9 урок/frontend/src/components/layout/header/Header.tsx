@@ -10,7 +10,7 @@ export default function Header() {
             <div>logo</div>
             <nav>
                 {/* <a href="/profile">Profile</a> | <a href="/feed">Feed</a> */}
-                <NavLink to="/books/create">add Book</NavLink> | <NavLink to="/books/search">Search</NavLink> | <NavLink to="/authors">Books</NavLink>
+                    <NavLink to="/books/search">Search</NavLink> | <NavLink to="/authors">Books</NavLink> | <NavLink to="/books/create">add Book</NavLink>
 
             </nav>
             <div>
